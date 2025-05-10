@@ -32,7 +32,7 @@ router.post('/add', function (req, res, next) {
 
     if (name.length === 0 || author.length === 0) {
         errors = true;
-        req.flash('error', "Please enter name and author");
+        req.flash('error', "Por favor ingrese el nombre y el autor");
         res.render('add', {
             name: name,
             author: author
@@ -50,7 +50,7 @@ router.post('/add', function (req, res, next) {
                     author: form_data.author
                 });
             } else {
-                req.flash('success', 'Book successfully added');
+                req.flash('success', 'Libro agregado exitosamente');
                 res.redirect('/');
             }
         });
@@ -65,7 +65,7 @@ router.get('/edit/:id', function (req, res, next) {
         if (err) throw err;
 
         if (rows.length <= 0) {
-            req.flash('error', 'Book not found with id = ' + id);
+            req.flash('error', `Libro no encontrado con id = ${id}`);
             res.redirect('/');
         } else {
             res.render('edit', {
@@ -87,7 +87,7 @@ router.post('/update/:id', function (req, res, next) {
 
     if (name.length === 0 || author.length === 0) {
         errors = true;
-        req.flash('error', "Please enter name and author");
+        req.flash('error', "Por favor ingrese el nombre y el autor");
         res.render('edit', {
             id,
             name,
@@ -107,7 +107,7 @@ router.post('/update/:id', function (req, res, next) {
                     author: form_data.author
                 });
             } else {
-                req.flash('success', 'Book successfully updated');
+                req.flash('success', 'Libro actualizado exitosamente');
                 res.redirect('/');
             }
         });
@@ -123,7 +123,7 @@ router.get('/delete/:id', function (req, res, next) {
             req.flash('error', err);
             res.redirect('/');
         } else {
-            req.flash('success', 'Book successfully deleted! ID = ' + id);
+            req.flash('success', `¡Libro eliminado con éxito! ID = ${id}`);
             res.redirect('/');
         }
     });
