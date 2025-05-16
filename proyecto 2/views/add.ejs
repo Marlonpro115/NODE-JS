@@ -1,0 +1,111 @@
+<%- include('template/head', { titleWeb: 'Añadir libro' , cssStyle: 'css/add.css' }) %>
+
+  <%- include('template/navbar') %>
+
+    <div class="container-fluid">
+      <div class="container my-5">
+        <form action="/add" method="post" class="p-4 bg-light rounded shadow-sm">
+          <header class="mb-4">
+            <h1 class="display-5 fw-bold">Añadir un Libro</h1>
+            <p class="text-muted">Administra y consulta tu colección de libros fácilmente.</p>
+          </header>
+
+          <% if (messages.error) { %>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <%- messages.error %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+            </div>
+            <% } %>
+
+              <div class="row g-3">
+                <!-- Título -->
+                <div class="col-12">
+                  <label for="name" class="form-label fw-semibold">Título del Libro <span
+                      class="text-danger">*</span></label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-primary text-white"><i class="bi bi-book"></i></span>
+                    <input type="text" class="form-control" id="name" name="name" value="<%= name %>"
+                      placeholder="Ej: Cien Años de Soledad" autocomplete="off" required>
+                  </div>
+                </div>
+
+                <!-- Autor -->
+                <div class="col-md-6">
+                  <label for="id_author" class="form-label fw-semibold">Autor <span class="text-danger">*</span></label>
+                  <select class="form-select" id="id_author" name="id_author" required>
+                    <option value="">Selecciona un autor</option>
+                    <% authors.forEach(author=> { %>
+                      <option value="<%= author.id_author %>" <%=id_author==author.id_author ? 'selected' : '' %>><%=
+                          author.name %>
+                      </option>
+                      <% }) %>
+                  </select>
+                </div>
+
+                <!-- Categoría -->
+                <div class="col-md-6">
+                  <label for="id_category" class="form-label fw-semibold">Categoría <span
+                      class="text-danger">*</span></label>
+                  <select class="form-select" id="id_category" name="id_category" required>
+                    <option value="">Selecciona una categoría</option>
+                    <% categories.forEach(category=> { %>
+                      <option value="<%= category.id_category %>" <%=id_category==category.id_category ? 'selected' : ''
+                        %>><%= category.name %>
+                      </option>
+                      <% }) %>
+                  </select>
+                </div>
+
+                <!-- Editorial -->
+                <div class="col-md-6">
+                  <label for="id_publisher" class="form-label fw-semibold">Editorial <span
+                      class="text-danger">*</span></label>
+                  <select class="form-select" id="id_publisher" name="id_publisher" required>
+                    <option value="">Selecciona una editorial</option>
+                    <% publishers.forEach(publisher=> { %>
+                      <option value="<%= publisher.id_publisher %>" <%=id_publisher==publisher.id_publisher ? 'selected'
+                        : '' %>><%= publisher.name %>
+                      </option>
+                      <% }) %>
+                  </select>
+                </div>
+
+                <!-- ISBN -->
+                <div class="col-md-6">
+                  <label for="isbn" class="form-label fw-semibold">ISBN</label>
+                  <input type="text" class="form-control" id="isbn" name="isbn" value="<%= isbn %>"
+                    placeholder="Ej: 978-3-16-148410-0" autocomplete="off">
+                </div>
+
+                <!-- Año de publicación -->
+                <div class="col-md-6">
+                  <label for="year_published" class="form-label fw-semibold">Año de publicación</label>
+                  <input type="number" class="form-control" id="year_published" name="year_published"
+                    value="<%= year_published %>" placeholder="Ej: 2020" min="1900"
+                    max="<%= new Date().getFullYear() %>">
+                </div>
+
+                <!-- Número de páginas -->
+                <div class="col-md-6">
+                  <label for="num_pages" class="form-label fw-semibold">Número de páginas</label>
+                  <input type="number" class="form-control" id="num_pages" name="num_pages" value="<%= num_pages %>"
+                    placeholder="Ej: 350" min="1">
+                </div>
+              </div>
+
+              <!-- Botones -->
+              <div class="mt-4 text-end">
+                <button type="submit" class="btn btn-success shadow-sm">
+                  <i class="bi bi-check-lg"></i> Agregar Libro
+                </button>
+                <a href="/" class="btn btn-outline-secondary ms-2 shadow-sm">
+                  <i class="bi bi-arrow-left"></i> Cancelar
+                </a>
+              </div>
+        </form>
+      </div>
+    </div>
+
+    </div>
+
+    <%- include('template/footer') %>
