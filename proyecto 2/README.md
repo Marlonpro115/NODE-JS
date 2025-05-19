@@ -1,10 +1,28 @@
-## Node.js CRUD with Express.js & MySQL
-Tutorial Link: [Node.js Simple CRUD with Express.js and MySQL](https://shouts.dev/articles/nodejs-simple-crud-with-expressjs-and-mysql)
+# Proyecto 2
 
-## Output
-![node-js-simple-crud-with-express-js-and-mysql-output](https://user-images.githubusercontent.com/13184472/66422500-9a04a600-ea2b-11e9-93b3-0f2cc7c18e3f.gif)
+Este proyecto es una aplicación web desarrollada con Node.js.
 
-## LICENCE
-You can download the project, modify the code and use it anywhere you want without re-posting to your blog. Happy Coding :)
+## Requisitos previos
 
-Thank you.
+- [Node.js](https://nodejs.org/) instalado
+- [npm](https://www.npmjs.com/) instalado
+
+## Instalación
+
+1. Clona el repositorio o descarga los archivos del proyecto.
+2. Abre una terminal en la carpeta del proyecto.
+3. Ejecuta el siguiente comando para instalar las dependencias:
+
+    ```bash
+    npm install
+    ```
+
+## Ejecución
+
+Para iniciar la aplicación web, ejecuta:
+
+```bash
+npm start
+```
+
+La aplicación estará disponible en `http://localhost:5000` (o el puerto configurado).
