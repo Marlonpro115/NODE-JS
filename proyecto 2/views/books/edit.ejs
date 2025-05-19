@@ -1,0 +1,100 @@
+<%- include('../template/head', { titleWeb: 'Actulizar' , cssStyle: 'css/edit.css' }) %>
+
+  <%- include('../template/navbar') %>
+
+    <div class="container-fluid">
+      <div class="container my-5">
+        <h2 class="text-center mb-4 text-warning fw-bold">Editar Información del Libro</h2>
+        <p class="text-center text-muted mb-4">Completa o corrige los campos necesarios para actualizar la información
+          del libro en la base de datos.</p>
+
+        <form action="/books/update/<%= book.id_book %>" method="post"
+          class="p-4 bg-light rounded shadow-sm border border-warning-subtle">
+          <div class="row g-3">
+
+            <!-- Título -->
+            <div class="col-12">
+              <label for="name" class="form-label fw-semibold text-warning">Título del Libro</label>
+              <div class="input-group">
+                <span class="input-group-text bg-warning text-dark"><i class="bi bi-book"></i></span>
+                <input type="text" class="form-control" id="name" name="name" value="<%= book.name %>" required
+                  placeholder="Ej. Cien Años de Soledad">
+              </div>
+            </div>
+
+            <!-- Autor -->
+            <div class="col-md-6">
+              <label for="id_author" class="form-label fw-semibold text-warning">Autor</label>
+              <select class="form-select border-warning-subtle" id="id_author" name="id_author" required>
+                <% authors.forEach(author=> { %>
+                  <option value="<%= author.id_author %>" <%=author.id_author===book.id_author ? 'selected' : '' %>>
+                    <%= author.name %>
+                  </option>
+                  <% }) %>
+              </select>
+            </div>
+
+            <!-- Categoría -->
+            <div class="col-md-6">
+              <label for="id_category" class="form-label fw-semibold text-warning">Categoría</label>
+              <select class="form-select border-warning-subtle" id="id_category" name="id_category" required>
+                <% categories.forEach(category=> { %>
+                  <option value="<%= category.id_category %>" <%=category.id_category===book.id_category ? 'selected'
+                    : '' %>>
+                    <%= category.name %>
+                  </option>
+                  <% }) %>
+              </select>
+            </div>
+
+            <!-- Editorial -->
+            <div class="col-md-6">
+              <label for="id_publisher" class="form-label fw-semibold text-warning">Editorial</label>
+              <select class="form-select border-warning-subtle" id="id_publisher" name="id_publisher" required>
+                <% publishers.forEach(publisher=> { %>
+                  <option value="<%= publisher.id_publisher %>" <%=publisher.id_publisher===book.id_publisher
+                    ? 'selected' : '' %>>
+                    <%= publisher.name %>
+                  </option>
+                  <% }) %>
+              </select>
+            </div>
+
+            <!-- ISBN -->
+            <div class="col-md-6">
+              <label for="isbn" class="form-label fw-semibold text-warning">ISBN</label>
+              <input type="text" class="form-control border-warning-subtle" id="isbn" name="isbn"
+                value="<%= book.isbn %>" placeholder="Ej. 978-3-16-148410-0">
+            </div>
+
+            <!-- Año de publicación -->
+            <div class="col-md-6">
+              <label for="year_published" class="form-label fw-semibold text-warning">Año de Publicación</label>
+              <input type="number" class="form-control border-warning-subtle" id="year_published" name="year_published"
+                value="<%= book.year_published %>" min="1000" max="2100" placeholder="Ej. 1967">
+            </div>
+
+            <!-- Número de páginas -->
+            <div class="col-md-6">
+              <label for="num_pages" class="form-label fw-semibold text-warning">Número de Páginas</label>
+              <input type="number" class="form-control border-warning-subtle" id="num_pages" name="num_pages"
+                value="<%= book.num_pages %>" min="1" placeholder="Ej. 417">
+            </div>
+          </div>
+
+          <!-- Botones -->
+          <div class="mt-4 text-end">
+            <button type="submit" class="btn btn-warning text-dark fw-semibold shadow-sm">
+              <i class="bi bi-check-lg"></i> Guardar Cambios
+            </button>
+            <a href="/books" class="btn btn-outline-secondary ms-2 shadow-sm">
+              <i class="bi bi-arrow-left"></i> Volver
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    </div>
+
+    <%- include('../template/footer') %>
