@@ -1,0 +1,63 @@
+<%- include('../template/head', { titleWeb: 'Añadir libro' , cssStyle: 'css/add.css' }) %>
+
+    <%- include('../template/navbar') %>
+
+        <div class="container-fluid">
+            <div class="container my-5">
+                <form action="/categories/add" method="post" class="p-4 bg-light rounded shadow-sm">
+                    <header class="mb-4 text-center text-md-start">
+                        <h1 class="display-5 fw-bold">Añadir una Categoría</h1>
+                        <p class="text-muted">Agrega una nueva categoría a tu colección.</p>
+                    </header>
+
+                    <% if (messages.error) { %>
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <%- messages.error %>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Cerrar"></button>
+                        </div>
+                        <% } %>
+
+                            <div class="row g-3">
+                                <!-- Nombre de la Categoría -->
+                                <div class="col-12 col-md-6">
+                                    <label for="name" class="form-label fw-semibold">Nombre de la Categoría <span
+                                            class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-primary text-white"><i
+                                                class="bi bi-tags"></i></span>
+                                        <input type="text" class="form-control" id="name" name="name"
+                                            value="<%= name %>" placeholder="Ej: Novela, Ciencia Ficción"
+                                            autocomplete="off" required>
+                                    </div>
+                                </div>
+
+                                <!-- Estado -->
+                                <div class="col-12 col-md-6">
+                                    <label for="state" class="form-label fw-semibold">Estado</label>
+                                    <select class="form-select" id="state" name="state" required>
+                                        <option value="1" <%=state==1 ? 'selected' : '' %>>Activo</option>
+                                        <option value="0" <%=state==0 ? 'selected' : '' %>>Inactivo</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Botones -->
+                            <div class="row mt-4">
+                                <div class="col-12 text-end">
+                                    <button type="submit" class="btn btn-success shadow-sm">
+                                        <i class="bi bi-check-lg"></i> Agregar Categoría
+                                    </button>
+                                    <a href="/categories" class="btn btn-outline-secondary ms-2 shadow-sm">
+                                        <i class="bi bi-arrow-left"></i> Cancelar
+                                    </a>
+                                </div>
+                            </div>
+                </form>
+            </div>
+        </div>
+
+
+        </div>
+
+        <%- include('../template/footer') %>
