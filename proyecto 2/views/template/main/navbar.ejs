@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg shadow-sm" style="background-color: #273c75;">
+    <div class="container-fluid d-flex align-items-center justify-content-between px-3">
+        <div class="d-flex align-items-center">
+            <a class="navbar-brand fw-bold text-white d-flex align-items-center me-5" href="/">
+                <!-- Icono de libro simple SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+                    class="bi bi-book me-2" viewBox="0 0 16 16">
+                    <path
+                        d="M1 2.828c.885-.37 2.154-.828 4-.828 1.82 0 3.114.444 4 .828v10.344c-.886.385-2.18.828-4 .828-1.82 0-3.115-.443-4-.828V2.828z" />
+                    <path
+                        d="M9 2.828c.885-.37 2.154-.828 4-.828 1.82 0 3.114.444 4 .828v10.344c-.886.385-2.18.828-4 .828-1.82 0-3.115-.443-4-.828V2.828z" />
+                </svg>
+                Biblioteca Virtual
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto fw-semibold">
+                <li class="nav-item">
+                    <a class="nav-link text-white active" aria-current="page" href="/">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/books">Libros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/authors">Autores</a>
+                </li>
+            </ul>
+            <div class="d-flex">
+                <a href="/login" class="btn btn-login">Iniciar Sesión</a>
+            </div>
+        </div>
+    </div>
+</nav>
