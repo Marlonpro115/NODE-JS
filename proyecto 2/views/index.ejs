@@ -1,0 +1,40 @@
+<%- include('./template/main/head', { cssStyle: 'css/output.css' }) %>
+    <%- include('./template/main/navbar') %>
+
+        <div class="min-h-screen bg-blue-950 text-gray-100">
+            <div class="container mx-auto py-10 px-4 pt-24">
+                <div class="text-center mb-10">
+                    <h1 class="text-4xl font-extrabold text-indigo-300 mb-4 drop-shadow-sm">
+                        Bienvenido a <span class="text-blue-400">InkVerse</span>
+                    </h1>
+                    <p class="text-lg max-w-2xl mx-auto text-indigo-200">
+                        InkVerse es tu plataforma virtual para explorar, prestar y comprar libros de forma rápida y
+                        sencilla. Descubre autores, encuentra tus próximas lecturas y vive la experiencia de una
+                        biblioteca moderna desde cualquier lugar.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div
+                        class="bg-indigo-800 bg-opacity-70 p-6 rounded-lg shadow-lg border border-indigo-600 hover:bg-opacity-90 transition">
+                        <h2 class="text-xl font-semibold text-indigo-300 mb-2">Explora la Colección</h2>
+                        <p class="text-indigo-200">Navega por miles de libros organizados por categorías, autores y
+                            editoriales destacadas.</p>
+                    </div>
+                    <div
+                        class="bg-blue-800 bg-opacity-70 p-6 rounded-lg shadow-lg border border-blue-600 hover:bg-opacity-90 transition">
+                        <h2 class="text-xl font-semibold text-blue-300 mb-2">Presta Libros</h2>
+                        <p class="text-indigo-200">Solicita préstamos de tus libros favoritos y llévalos contigo sin
+                            complicaciones.</p>
+                    </div>
+                    <div
+                        class="bg-gray-700 bg-opacity-70 p-6 rounded-lg shadow-lg border border-gray-600 hover:bg-opacity-90 transition">
+                        <h2 class="text-xl font-semibold text-gray-300 mb-2">Compra Directa</h2>
+                        <p class="text-indigo-200">Adquiere ejemplares físicos o digitales para construir tu propia
+                            biblioteca personal.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include('./template/main/footer') %>

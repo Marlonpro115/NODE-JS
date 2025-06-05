@@ -1,0 +1,75 @@
+<nav class="bg-indigo-900 bg-opacity-90 shadow-md fixed top-0 left-0 w-full z-50 backdrop-blur-sm">
+    <div class="w-full px-4">
+        <div class="flex items-center justify-between h-16">
+            <!-- Logo + Texto -->
+            <a href="/" class="flex items-center text-white font-bold text-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M1 2.828c.885-.37 2.154-.828 4-.828 1.82 0 3.114.444 4 .828v10.344c-.886.385-2.18.828-4 .828-1.82 0-3.115-.443-4-.828V2.828z" />
+                    <path
+                        d="M9 2.828c.885-.37 2.154-.828 4-.828 1.82 0 3.114.444 4 .828v10.344c-.886.385-2.18.828-4 .828-1.82 0-3.115-.443-4-.828V2.828z" />
+                </svg>
+                InkVerse
+            </a>
+
+            <!-- Botón toggle móvil -->
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none" aria-label="Abrir menú">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+            <!-- Navegación Desktop -->
+            <div class="hidden md:flex md:items-center md:space-x-8">
+                <div class="flex space-x-6 text-white font-medium">
+                    <a href="/" class="hover:text-indigo-300 transition">Inicio</a>
+                    <a href="/books" class="hover:text-indigo-300 transition">Libros</a>
+                    <a href="/authors" class="hover:text-indigo-300 transition">Autores</a>
+                </div>
+                <a href="/login"
+                    class="ml-6 bg-white text-indigo-900 hover:bg-gray-100 font-semibold py-1.5 px-4 rounded transition duration-200">
+                    Iniciar Sesión
+                </a>
+            </div>
+        </div>
+
+        <!-- Menú móvil -->
+        <div id="menu" class="md:hidden overflow-hidden max-h-0 opacity-0 transition-all duration-300 ease-in-out">
+            <a href="/" class="block px-4 py-2 text-white hover:text-indigo-300 transition">Inicio</a>
+            <a href="/books" class="block px-4 py-2 text-white hover:text-indigo-300 transition">Libros</a>
+            <a href="/authors" class="block px-4 py-2 text-white hover:text-indigo-300 transition">Autores</a>
+            <a href="/login"
+                class="block w-full text-center bg-white text-indigo-900 hover:bg-gray-100 font-semibold py-2 rounded transition duration-200 my-2 mx-4">
+                Iniciar Sesión
+            </a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    toggleBtn.addEventListener('click', () => {
+        if (menu.style.maxHeight && menu.style.maxHeight !== '0px') {
+            // Cerrar menú
+            menu.style.maxHeight = '0';
+            menu.style.opacity = '0';
+        } else {
+            // Abrir menú: set maxHeight al scrollHeight para que crezca con animación
+            menu.style.maxHeight = menu.scrollHeight + 'px';
+            menu.style.opacity = '1';
+        }
+    });
+
+    // Para que se "contraiga" suavemente también cuando cambie tamaño ventana, opcional
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+            menu.style.maxHeight = null;
+            menu.style.opacity = null;
+        } else if (!menu.style.maxHeight || menu.style.maxHeight === '0px') {
+            menu.style.opacity = '0';
+        }
+    });
+</script>

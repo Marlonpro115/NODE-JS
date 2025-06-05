@@ -1,0 +1,79 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
+ body {
+   min-height: 100vh;
+ }
+
+ .sidebar {
+   min-width: 220px;
+   background-color: #343a40;
+ }
+
+ .sidebar a {
+   color: #fff;
+   text-decoration: none;
+ }
+
+ .sidebar a:hover {
+   background-color: #495057;
+   text-decoration: none;
+ }
+
+ .sidebar .nav-link.active {
+   background-color: #495057;
+ }
+
+ .content {
+   flex-grow: 1;
+   padding: 2rem;
+ }
+
+ /*Cards*/
+ .card-hover {
+   transition: all 0.3s ease;
+ }
+
+ .card-hover:hover {
+   transform: scale(1.03);
+ }
+
+ /* Inversión para PRIMARY */
+ .card-hover.border-primary:hover {
+   background-color: var(--bs-primary);
+   color: #fff;
+ }
+
+ .card-hover.border-primary:hover .text-primary {
+   color: #fff !important;
+ }
+
+ /* Inversión para SUCCESS */
+ .card-hover.border-success:hover {
+   background-color: var(--bs-success);
+   color: #fff;
+ }
+
+ .card-hover.border-success:hover .text-success {
+   color: #fff !important;
+ }
+
+ /* Inversión para WARNING */
+ .card-hover.border-warning:hover {
+   background-color: var(--bs-warning);
+   color: #000;
+   /* Mejor contraste con fondo amarillo */
+ }
+
+ .card-hover.border-warning:hover .text-warning {
+   color: #000 !important;
+ }
+
+ /* Inversión para INFO */
+ .card-hover.border-info:hover {
+   background-color: var(--bs-info);
+   color: #fff;
+ }
+
+ .card-hover.border-info:hover .text-info {
+   color: #fff !important;
+ }

@@ -1,0 +1,71 @@
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-10 pb-6 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+
+            <!-- Info -->
+            <div>
+                <h5 class="text-xl font-bold mb-4">Gestor de Libros</h5>
+                <p class="text-gray-300 mb-4">
+                    Una plataforma para organizar, buscar y disfrutar tus libros favoritos.
+                </p>
+                <p class="text-gray-400 mb-1 text-sm">
+                    &copy; <%= new Date().getFullYear() %> Todos los derechos reservados.
+                </p>
+                <small class="text-gray-400 text-xs">
+                    Desarrollado por <span class="font-semibold text-white">Marlon & ASURA STUDIO'S</span>
+                </small>
+            </div>
+
+            <!-- Useful Links -->
+            <div>
+                <h6 class="text-lg font-semibold mb-4">Enlaces útiles</h6>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-300 hover:text-blue-500 underline transition">Inicio</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-blue-500 underline transition">Contacto</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-blue-500 underline transition">Política de
+                            privacidad</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-blue-500 underline transition">Términos y
+                            condiciones</a></li>
+                </ul>
+            </div>
+
+            <!-- Subscribe -->
+            <div>
+                <h6 class="text-lg font-semibold mb-4">Suscríbete</h6>
+                <form class="flex flex-col sm:flex-row items-center gap-3 mb-4" novalidate>
+                    <input type="email" placeholder="Tu correo electrónico" aria-label="Correo electrónico"
+                        class="w-full sm:flex-1 px-4 py-2 rounded-lg border border-gray-700 bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                        required />
+                    <button type="submit"
+                        class="px-6 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold transition">
+                        Enviar
+                    </button>
+                </form>
+                <div class="flex justify-center md:justify-start gap-6 text-2xl text-gray-300">
+                    <a href="#" aria-label="Facebook" class="hover:text-blue-500 transition">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="#" aria-label="Twitter" class="hover:text-blue-500 transition">
+                        <i class="bi bi-twitter"></i>
+                    </a>
+                    <a href="#" aria-label="GitHub" class="hover:text-blue-500 transition">
+                        <i class="bi bi-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <hr class="border-gray-700 my-8" />
+
+        <div class="text-center text-gray-400 text-sm">
+            © <%= new Date().getFullYear() %> Gestor de Libros. Todos los derechos reservados.
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="../js/main.js"></script>
+</body>
+
+</html>
